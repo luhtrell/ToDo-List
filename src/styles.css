@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url('./assets/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/Raleway-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    font-family: "Open Sans";
+}
+
+#headerContainer {
+    position: sticky;
+    padding-bottom: 25px;
+    top: 0;
+    z-index: 999;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#sideContainer{
+    max-width: 300px;
+    height: 100vh;
+    background-color: red;
+    background-color: #E5E5E5;
+    display: inline-block;
+
+}
+
+#sidebar {
+    padding: 20px;
+    width: 260px;
+}
+
+#taskBtn {
+    position: relative;
+    margin-left: 60px;
+    margin-top: 10px;
+    padding: 0;
+    height: 30px;
+    width: 80px;
+    border-bottom: 1px solid black;
+    
+}
+
+button:hover {
+    background-color: #FCA311;
+    transition: 0.9s;
+}
+
+#homeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#homeTitle, #projectsTitle  {
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+#title {
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+
+.tile {
+    padding: 10px;
+    font-family: 'Raleway';
+    margin: 3px;
+    cursor: pointer;
+}
+
+.tile:hover {
+    background-color: #FCA311;
+    transition: 0.9s;
+}
+
+#rightContainer{
+   display: inline-block;
+   vertical-align: top;
+   box-sizing: border-box;
+   width: calc(100% - 30rem);
+   height: 100vh;
+   margin: auto;
+   text-align: center;
+}
+
+.addBtn {
+    height: 35px;
+    border-radius: 5px;
+    width: 60%;
+    margin-top: 2rem;
+    font-size: 30px;
+}
+
+button {
+    font-family: 'Raleway';
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+#taskTile {
+    font-family: 'Raleway';
+}
+
+#tasksContainer {
+    display: block;
+    height: 100vh;
+}
+
+.taskForm {
+    position: fixed;
+    box-sizing: border-box;
+    height: 50%;
+    display: inline-grid;
+    column-gap: 50px;
+    padding-top: 35px;
+    border: 1px solid #FCA311;
+    border-radius: 10px;
+    z-index: 10;
+    font-family: 'Raleway';
+    width: 500px;
+    max-width: 80%;
+    background-color: white;
+    top: 50%;
+    left: 56%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+}
+
+.taskForm.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* gap: 2rem; */
+    box-sizing: border-box;
+}
+
+.tasksText, .dueDate {
+    height: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.Description {
+    height: 60px;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+ .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+} 
